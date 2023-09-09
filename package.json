@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "zabbix-promise": "^2.0.2"
+  }
+}
