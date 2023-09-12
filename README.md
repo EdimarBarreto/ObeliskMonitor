@@ -10,4 +10,4 @@ sudo apt-get install npm
 
 # Apos instalado, instale as bibliotecas para o projeto
 
-npm install -i
+npm init -y
