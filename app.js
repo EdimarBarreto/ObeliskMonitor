@@ -1,7 +1,10 @@
+// 71321871212ec01bc1451bce3e4f18a59209485435fe1745b46f922f81865b6b
+
 const axios = require('axios');
 
 // Configurações da API do Zabbix
-const zabbixApiUrl = 'http://192.168.100.147:443/api_jsonrpc.php'; // URL da api zabbix
+// const zabbixApiUrl = 'http://192.168.100.147:443/api_jsonrpc.php'; // URL da api zabbix servidor local
+const zabbixApiUrl = 'http://18.231.124.197:443/api_jsonrpc.php'; // URL da api zabbix amazon
 const zabbixUser = 'Admin';
 const zabbixPassword = 'As3!3.;ç90s';
 
@@ -75,7 +78,7 @@ const getHosts = async () => {
 
 // Função para obter o uso de CPU
 const getCPUUsage = async () => {
-    const hostId = '10585'; // Substitua pelo ID do host desejado
+    const hostId = '10084'; // Substitua pelo ID do host desejado
     const itemKey = 'system.cpu.util'; // Substitua pela chave do item de CPU desejado
   
     const requestData = {
@@ -103,8 +106,8 @@ const getCPUUsage = async () => {
   
   // Função para obter o uso de memória
   const getMemoryUsage = async () => {
-    const hostId = '10585'; // Substitua pelo ID do host desejado
-    const itemKey = 'vm.memory.size[total]'; // Substitua pela chave do item de memória desejado
+    const hostId = '10084'; // Substitua pelo ID do host desejado
+    const itemKey = 'vm.memory.utilization'; // Substitua pela chave do item de memória desejado
   
     const requestData = {
       jsonrpc: '2.0',
@@ -133,8 +136,8 @@ const getCPUUsage = async () => {
   // Funcao para obter o trafego de rede
 
   const getNetworkTraffic = async () => {
-    const hostId = '10585';
-    const itemKey = 'net.if.out["enp5s0"]';
+    const hostId = '10084';
+    const itemKey = 'net.if.out["eth0"]';
 
     const requestData = {
         jsonrpc: '2.0',
@@ -161,7 +164,7 @@ const getCPUUsage = async () => {
     
   // Função para obter o uso de armazenamento
   const getStorageUsage = async () => {
-    const hostId = '10585'; // Substitua pelo ID do host desejado
+    const hostId = '10084'; // Substitua pelo ID do host desejado
     const itemKey = 'vfs.fs.size[/,used]'; // Substitua pela chave do item de armazenamento desejado
   
     const requestData = {
@@ -189,7 +192,7 @@ const getCPUUsage = async () => {
   
   // Função para obter o tráfego de rede
   const getSwapSpace = async () => {
-    const hostId = '10585'; 
+    const hostId = '10084'; 
     const itemKey = 'system.swap.size[,total]';
 
     const requestData = {
